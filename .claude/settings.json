@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "rainforest-mind": {
+      "source": {
+        "source": "github",
+        "repo": "00sk4r3/rainforest-mind"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "rainforest-mind@rainforest-mind": true
+  }
+}
