@@ -10,6 +10,10 @@ que existe delas é o commit de release (`git log --grep="^Versao "`), e reescre
 29 releases de memória produziria nota bonita e errada. Versão nova daqui em diante
 entra aqui no mesmo commit que sobe o `version` do `plugin.json`.
 
+## 2.15.1 — 2026-11-16
+
+- **Sessão nova neste repositório já abre com o plugin.** O `.claude/settings.json` registra o marketplace `00sk4r3/rainforest-mind` e liga `rainforest-mind@rainforest-mind`, então sessões do Claude Code abertas aqui — inclusive na nuvem, que começam num container limpo — carregam o plugin sem `claude plugin install`. Nada muda no comportamento do plugin.
+
 ## 2.15.0 — 2026-11-15
 
 - **`fechar ok` depois do squash deixa de mandar reabrir o executar.** O estado do fechamento costuma ser gravado numa branch nova da `main`, depois do merge do PR. Ali o `marcar fechar ok` comparava o código verificado com um HEAD que já tem o squash e as mudanças da `main` por cima, e acusava o `CHANGELOG.md` como código alterado (Issue #714). Agora, quando o HEAD não contém o commit do `verificar`, a comparação é feita contra a ponta do PR mergeado (`"pr":<n>` no `--json`, conferido com `gh pr view`). Código commitado depois do `verificar` e mergeado continua recusado. Sem PR mergeado (ou sem o número dele), a comparação é contra o HEAD, como antes, e a recusa lembra de passar o número do PR. Sem `gh`, sai 69.
