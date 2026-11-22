@@ -10,6 +10,10 @@ que existe delas é o commit de release (`git log --grep="^Versao "`), e reescre
 29 releases de memória produziria nota bonita e errada. Versão nova daqui em diante
 entra aqui no mesmo commit que sobe o `version` do `plugin.json`.
 
+## 2.15.2 — 2026-11-22
+
+- **O plugin deixa de ser habilitado pelo repositório.** O `.claude/settings.json` da 2.15.1 saiu: a instalação agora é global (escopo user), pelo setup script do ambiente de nuvem e por `claude plugin install` no computador. Nada muda no comportamento do plugin.
+
 ## 2.15.1 — 2026-11-16
 
 - **Sessão nova neste repositório já abre com o plugin.** O `.claude/settings.json` registra o marketplace `00sk4r3/rainforest-mind` e liga `rainforest-mind@rainforest-mind`, então sessões do Claude Code abertas aqui — inclusive na nuvem, que começam num container limpo — carregam o plugin sem `claude plugin install`. Nada muda no comportamento do plugin.
